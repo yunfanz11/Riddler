@@ -1,6 +1,21 @@
-import numpy as np
-import pandas as pd
+# https://fivethirtyeight.com/features/come-on-down-and-escape-the-maze/
 
+
+#
+# Those pesky enemies of Riddler Nation are at it again! A couple of weeks ago, they trapped you in a maze without walls.
+# Most of you escaped, but the enemies remain undeterred. They’ve been hard at work building a new maze without walls, shown below.
+#
+# Before banishing you to the maze, they hand you a list of rules.
+#
+# 1. You can enter via any perimeter square. The goal is to reach the yellow star in the center with the lowest possible score,
+#    which is calculated by adding up all the numbers that appeared in any squares you crossed.
+# 2. You can only move horizontally or vertically (not diagonally) to bordering squares.
+# 3. If you enter a square with an arrow (↑), you have to exit that square in the direction the arrow indicates. Some squares have double arrows (↔), giving you a choice of two directions.
+# 4. If you enter a square with a number, you must add it to your score, but you can exit in the direction of your choice.
+# 5. If an arrow leads you to a square with a skull, you die. But you knew that already.
+#
+
+import numpy as np
 
 class Location:
     def __init__(self, x, y, value):
@@ -169,7 +184,9 @@ def main():
             bestwinner.append(z)
             if len(z[2]) < len(shortestpath):
                 shortestpath = z[2]
-            
+
+
+    print("Winning score is: {}".format(bestscore))
     print("Number of Winning Paths Found: {}".format(len(bestwinner)))
     print("Best Path is: {}".format(shortestpath))
     
