@@ -1,1 +1,1 @@
-# Riddler
+# Weekly Riddler from FiveThirtyEight
